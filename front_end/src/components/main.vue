@@ -2,19 +2,27 @@
   <div>
     <b-form inline>
       <label class="sr-only" for="inlineFormInputName2">Name</label>
-      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" v-model="episodes" placeholder="coupang ldap id" />
+      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" v-model="episodes"  />
+      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" v-model="result"  />
       <b-button variant="primary" v-on:click="login">콘솔 확인</b-button>
+      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" v-model="x"  />
+      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" v-model="y"  />
+      <b-button variant="primary" v-on:click="post">콘솔 확인</b-button>
     </b-form>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import common from '../http_common'
+// import axios from 'axios'
 export default {
   name: 'Login',
   data () {
     return {
       episodes: '',
+      result: '',
+      x: '',
+      y: '',
       credentials: {
         username: '',
         password: ''
@@ -23,12 +31,24 @@ export default {
     }
   },
   methods: {
+    post: function(){
+      common.post('/post',this.x)
+        .then((res) => {
+          this.y = res.data
+        })
+    },
     login: function () {
-      console.log(this.episodes)
+      common.get('/click')
+        .then((res) => {
+          this.result = res.data
+        })
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.error(error);
+        })
     },
     getEps () {
-      const path = 'http://localhost:5000/parse'
-      axios.get(path)
+      common.get('/parse')
         .then((res) => {
           this.episodes = res.data
         })
