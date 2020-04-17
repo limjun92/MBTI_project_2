@@ -4,7 +4,7 @@
     
 ### 아나콘다 생성및 활성화
         
-    conda create -n AI python = 3.7
+    conda create -n AI python=3.7
     conda activate AI
 
 ### back_end에서 가상환경에 접속 
