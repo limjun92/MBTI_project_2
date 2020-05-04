@@ -29,3 +29,27 @@
     필요한 pip install 하기
     
     -> npm run dev
+
+
+
+## 핵심 키워드들
+
+ssh -i J02C105.pem ubuntu@15.165.18.70
+
+http://15.165.18.70:5000
+
+host='0.0.0.0'
+
+npm cache clean --force
+
+rm -rf node_modules package-lock.json
+
+npm install
+
+rm -rf folderName
+
+
+vi /etc/nginx/sites-enabled/default
+
+vi /etc/nginx/sites-available/default 
+
