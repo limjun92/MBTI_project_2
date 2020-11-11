@@ -1,3 +1,6 @@
+https://youtu.be/iMKle-uBosA
+
+
 ### 웹사이트 접속후 window 용 version 3.7다운로드
 
     https://www.anaconda.com/distribution/
